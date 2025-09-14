@@ -1,30 +1,49 @@
-# Illuminated-Manuscripts
-Generating Image Summaries from Chapter Text in a Digital Manuscript
+# 📜 Manuscript Image Captioning: Multimodal Deep Learning Approach
 
-This project investigates how textual content in a
-manuscript chapter can be computationally analyzed to generate a meaningful description or
-caption for an accompanying image. The goal is to explore the thematic connection between
-text and illustration and evaluate whether automated summarization and keyword extraction
-techniques can assist in manuscript image metadata creation.
+This project explores how **textual content in medieval manuscripts** can be computationally analyzed to generate **meaningful captions for associated images**. By integrating **Computer Vision (CV)** and **Natural Language Processing (NLP)**, the framework learns from manuscript images and their corresponding texts, capturing both visual and thematic information.
 
-Digital Approach: The project will begin by selecting 1–2 chapters from the Greek
-manuscript that contain both textual content and related images. The chapter texts will be
-transcribed or extracted from the digital manuscript source. The transcription will be cleaned
-and prepared for analysis.
-Next, the text will be processed using digital text analysis techniques:
- Keyword extraction and thematic analysis: Using tools like Voyant Tools, highfrequency words and key themes will be identified in the Greek text. Since automatic
-tools have limited support for ancient or medieval Greek, manual review and
-assistance from AI language models (such as ChatGPT) will complement this step.
- Automated summarization: The chapter text will be summarized using GPT-based
-language models, which can generate concise summaries in Greek or English. This
-summary will serve as a textual representation of the chapter’s core content.
- Caption generation for images: Based on extracted keywords and summaries, short
-descriptive captions for the manuscript’s images will be generated. These captions
-aim to reflect the content and themes of the text visually represented by the images.
- Comparison and reflection: The generated captions will be compared to the actual
-images to evaluate how well the text-based summaries represent the visual content.
-This will provide insight into the relationship between text and image in the
-manuscript and the utility of digital tools in manuscript studies.
-Finally, the project will present the results as a combined digital document or simple web
-interface showcasing images, chapter texts, and the generated summaries and captions,
-illustrating the digital approach's effectiveness.
+The motivation behind this work is that **manuscript illustrations cannot be fully understood by visual cues alone**; combining textual context ensures captions retain historical and thematic significance.
+
+---
+
+## 🔍 Research Goal
+
+The goal of this project is to investigate the **relationship between manuscript text and illustrations**. Specifically, it addresses:
+
+- How chapter texts in manuscripts can be summarized and analyzed computationally.  
+- How extracted keywords and thematic summaries can inform automated caption generation.  
+- How multimodal deep learning can enhance metadata creation for manuscript images.  
+
+This approach contributes to **digital manuscript studies**, enabling semi-automated annotation and better understanding of illustrated historical texts.
+
+---
+
+## 🧠 Approach
+
+### 1. Image Understanding
+- Images are processed using **DenseNet201**, a pre-trained Convolutional Neural Network (CNN).  
+- The CNN extracts high-level **visual features** capturing spatial and semantic information.
+
+### 2. Text Understanding
+- Manuscript texts are cleaned, tokenized, and converted to sequences.  
+- Sequences are embedded and fed into an **LSTM network** to capture **contextual and thematic meaning**.
+
+### 3. Multimodal Fusion
+- Image and text features are **combined** into a joint representation.  
+- The fused representation enables generation of captions that reflect both **visual content and textual themes**.
+
+### 4. Training Optimization
+The model is trained using best practices to ensure robust learning:  
+- **Adam optimizer** for adaptive learning rates  
+- **EarlyStopping** to prevent overfitting  
+- **ModelCheckpoint** to save the best model  
+- **ReduceLROnPlateau** to adjust learning rate dynamically  
+
+### 5. Visualization & Analysis
+- Training loss and validation loss trends are visualized with **Matplotlib** and **Seaborn**.  
+- Results are analyzed to understand learning dynamics and improve model performance.
+
+---
+
+
+
